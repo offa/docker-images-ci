@@ -27,11 +27,15 @@ matrix:
     # Danek
     - env: PROJECT=danek BUILD=gcc-7
     - env: PROJECT=danek BUILD=clang-5
+    # Keygen
+    - env: PROJECT=keygen BUILD=gcc-7
+    - env: PROJECT=keygen BUILD=gcc-6
+    - env: PROJECT=keygen BUILD=clang-5
+    - env: PROJECT=keygen BUILD=clang-4
 
 
 before_script:
   - git clone --depth=1 https://github.com/offa/${PROJECT} ${PROJECT}
-  #- git clone --depth=1 https://github.com/offa/keygen keygen
   #- git clone --depth=1 https://github.com/offa/matcher matcher
 
 script:
