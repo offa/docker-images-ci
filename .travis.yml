@@ -16,15 +16,18 @@ env:
     - DEPLOY_REGISTRY: "registry.gitlab.com/offa/docker-images-ci"
     - IMAGE_NO_PUSH: true
 
+ matrix:
+   include:
+    - env: PROJECT=stm32-eth BUILD=gcc-7
+
 
 before_script:
-  - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
-  - git clone --depth=1 https://github.com/offa/danek danek
-  - git clone --depth=1 https://github.com/offa/keygen keygen
-  - git clone --depth=1 https://github.com/offa/matcher matcher
+  - git clone --depth=1 https://github.com/offa/${PROJECT} ${PROJECT}
+  #- git clone --depth=1 https://github.com/offa/danek danek
+  #- git clone --depth=1 https://github.com/offa/keygen keygen
+  #- git clone --depth=1 https://github.com/offa/matcher matcher
 
 script:
-    - cd stm32-eth
-    - ../script/build-image.sh gcc-7 .
-
+    - cd ${PROJECT}
+    - ../script/build-image.sh ${BUILD} .
 
