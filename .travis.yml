@@ -24,5 +24,7 @@ before_script:
   - git clone --depth=1 https://github.com/offa/matcher matcher
 
 script:
-  - docker --version
+    - cd stm32-eth
+    - ../script/build-image.sh gcc-7 .
+
 
