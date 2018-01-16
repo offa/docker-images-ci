@@ -13,5 +13,9 @@ fi
 DEV_IMAGE=${DEPLOY_REGISTRY}/${IMG}
 
 docker build --pull -t ${DEV_IMAGE} ${IMG_PATH} ${BUILD_ARG}
-docker push ${DEV_IMAGE}
+
+if [ -z ${IMAGE_NO_PUSH+x} ]
+then
+    docker push ${DEV_IMAGE}
+fi
 

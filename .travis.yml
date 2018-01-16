@@ -11,6 +11,18 @@ addons:
     packages:
       - docker-ce
 
+env:
+  global:
+    - DEPLOY_REGISTRY: "registry.gitlab.com/offa/docker-images-ci"
+    - IMAGE_NO_PUSH: true
+
+
+before_script:
+  - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
+  - git clone --depth=1 https://github.com/offa/danek danek
+  - git clone --depth=1 https://github.com/offa/keygen keygen
+  - git clone --depth=1 https://github.com/offa/matcher matcher
+
 script:
   - docker --version
 
