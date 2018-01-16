@@ -16,8 +16,8 @@ env:
     - DEPLOY_REGISTRY: "registry.gitlab.com/offa/docker-images-ci"
     - IMAGE_NO_PUSH: true
 
- matrix:
-   include:
+matrix:
+  include:
     - env: PROJECT=stm32-eth BUILD=gcc-7
 
 
