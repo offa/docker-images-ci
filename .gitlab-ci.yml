@@ -17,7 +17,7 @@ before_script:
 # ----------------------------------
 .stm32-eth_template: &stm32-eth_job_definition
   variables:
-    DEPLOY_REGISTRY: ${DEPLOY_REGISTRY_BASE}-stm32
+    DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-stm32
 
 stm32-eth_gcc-7:
   <<: *stm32-eth_job_definition
