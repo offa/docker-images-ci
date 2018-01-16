@@ -22,6 +22,7 @@ before_script:
 stm32-eth_gcc-7:
   <<: *stm32-eth_job_definition
   script:
+    - echo "***${DEPLOY_REGISTRY}+++"
     - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
     - cd stm32-eth
     - ../script/build-image.sh gcc-7 .
