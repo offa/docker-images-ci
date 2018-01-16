@@ -32,11 +32,15 @@ matrix:
     - env: PROJECT=keygen BUILD=gcc-6
     - env: PROJECT=keygen BUILD=clang-5
     - env: PROJECT=keygen BUILD=clang-4
+    # Matcher
+    - env: PROJECT=matcher BUILD=gcc-7
+    - env: PROJECT=matcher BUILD=gcc-6
+    - env: PROJECT=matcher BUILD=clang-5
+    - env: PROJECT=matcher BUILD=clang-4
 
 
 before_script:
   - git clone --depth=1 https://github.com/offa/${PROJECT} ${PROJECT}
-  #- git clone --depth=1 https://github.com/offa/matcher matcher
 
 script:
     - cd ${PROJECT}
