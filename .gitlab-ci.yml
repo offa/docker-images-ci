@@ -1,4 +1,4 @@
-image: registry.gitlab.com/offa/docker-images/docker-build:latest
+image: registry.gitlab.com/offa/docker-images/docker-build:stable
 
 variables:
   DOCKER_DRIVER: overlay2
