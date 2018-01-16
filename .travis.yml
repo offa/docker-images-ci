@@ -1,0 +1,16 @@
+language: generic
+
+dist: trusty
+sudo: required
+
+services:
+  - docker
+
+addons:
+  apt:
+    packages:
+      - docker-ce
+
+script:
+  - docker --version
+
