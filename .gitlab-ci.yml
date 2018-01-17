@@ -11,10 +11,15 @@ before_script:
   - docker login -u gitlab-ci-token -p ${CI_JOB_TOKEN} ${CI_REGISTRY}
 
 
+.build_template: &build_job_base
+  retry: 1
+
+
 # ----------------------------------
 # Stm32-eth Image Build
 # ----------------------------------
 .stm32-eth_template: &stm32-eth_job_definition
+  <<: *build_job_base
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-stm32
 
@@ -58,6 +63,7 @@ stm32-eth_arm-none-eabi-gcc:
 # Danek Image Build
 # ----------------------------------
 .danek_template: &danek_job_definition
+  <<: *build_job_base
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-danek
 
@@ -80,6 +86,7 @@ danek_clang-5:
 # Keygen Image Build
 # ----------------------------------
 .keygen_template: &keygen_job_definition
+  <<: *build_job_base
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-keygen
 
@@ -116,6 +123,7 @@ keygen_clang-4:
 # Matcher Image Build
 # ----------------------------------
 .matcher_template: &matcher_job_definition
+  <<: *build_job_base
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-matcher
 
