@@ -9,3 +9,5 @@
 Docker Images for CI.
 
 Base Images: [GitHub](https://github.com/offa/docker-images) and [GitLab](https://gitlab.com/offa/docker-images)
+
+**Registry:** https://gitlab.com/offa/docker-images-ci/container_registry
