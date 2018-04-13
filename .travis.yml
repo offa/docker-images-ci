@@ -44,8 +44,7 @@ matrix:
 
 
 before_script:
-  - if [[ "${PROJECT}" == "stm32-eth" ]]; then ARGS="--branch=issue102-ci_sanitizer_enabled"; fi
-  - git clone ${ARGS} --depth=1 https://github.com/offa/${PROJECT} ${PROJECT}
+  - git clone --depth=1 https://github.com/offa/${PROJECT} ${PROJECT}
 
 script:
     - cd ${PROJECT}
