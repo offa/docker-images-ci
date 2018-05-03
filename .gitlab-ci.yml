@@ -23,6 +23,13 @@ before_script:
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-stm32
 
+stm32-eth_gcc-8:
+  <<: *stm32-eth_job_definition
+  script:
+    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
+    - cd stm32-eth
+    - ../script/build-image.sh gcc-8 .
+
 stm32-eth_gcc-7:
   <<: *stm32-eth_job_definition
   script:
