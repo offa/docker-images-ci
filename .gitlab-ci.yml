@@ -118,7 +118,7 @@ danek_clang-5:
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-keygen
 
-keygen_gcc-7:
+keygen_gcc-8:
   <<: *keygen_job_definition
   script:
     - git clone --depth=1 https://github.com/offa/keygen keygen
