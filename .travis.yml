@@ -30,6 +30,7 @@ matrix:
     # Danek
     - env: PROJECT=danek BUILD=gcc-8
     - env: PROJECT=danek BUILD=gcc-7
+    - env: PROJECT=danek BUILD=clang-7
     - env: PROJECT=danek BUILD=clang-6
     - env: PROJECT=danek BUILD=clang-5
     # Keygen
