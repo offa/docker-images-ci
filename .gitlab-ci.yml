@@ -44,6 +44,13 @@ stm32-eth_gcc-6:
     - cd stm32-eth
     - ../script/build-image.sh gcc-6 .
 
+stm32-eth_clang-7:
+  <<: *stm32-eth_job_definition
+  script:
+    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
+    - cd stm32-eth
+    - ../script/build-image.sh clang-7 .
+
 stm32-eth_clang-6:
   <<: *stm32-eth_job_definition
   script:
