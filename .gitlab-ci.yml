@@ -65,13 +65,6 @@ stm32-eth_clang-5:
     - cd stm32-eth
     - ../script/build-image.sh clang-5 .
 
-stm32-eth_clang-4:
-  <<: *stm32-eth_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
-    - cd stm32-eth
-    - ../script/build-image.sh clang-4 .
-
 stm32-eth_arm-none-eabi-gcc:
   <<: *stm32-eth_job_definition
   script:
@@ -174,13 +167,6 @@ keygen_clang-5:
     - cd keygen
     - ../script/build-image.sh clang-5 .
 
-keygen_clang-4:
-  <<: *keygen_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/keygen keygen
-    - cd keygen
-    - ../script/build-image.sh clang-4 .
-
 
 # ----------------------------------
 # Matcher Image Build
@@ -231,11 +217,4 @@ matcher_clang-5:
     - git clone --depth=1 https://github.com/offa/matcher matcher
     - cd matcher
     - ../script/build-image.sh clang-5 .
-
-matcher_clang-4:
-  <<: *matcher_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/matcher matcher
-    - cd matcher
-    - ../script/build-image.sh clang-4 .
 
