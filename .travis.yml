@@ -37,6 +37,7 @@ matrix:
     - env: PROJECT=keygen BUILD=gcc-8
     - env: PROJECT=keygen BUILD=gcc-7
     - env: PROJECT=keygen BUILD=gcc-6
+    - env: PROJECT=keygen BUILD=clang-7
     - env: PROJECT=keygen BUILD=clang-6
     - env: PROJECT=keygen BUILD=clang-5
     - env: PROJECT=keygen BUILD=clang-4

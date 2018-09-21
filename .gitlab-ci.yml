@@ -153,6 +153,13 @@ keygen_gcc-6:
     - cd keygen
     - ../script/build-image.sh gcc-6 .
 
+keygen_clang-7:
+  <<: *keygen_job_definition
+  script:
+    - git clone --depth=1 https://github.com/offa/keygen keygen
+    - cd keygen
+    - ../script/build-image.sh clang-7 .
+
 keygen_clang-6:
   <<: *keygen_job_definition
   script:
