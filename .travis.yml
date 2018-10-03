@@ -25,7 +25,6 @@ matrix:
     - env: PROJECT=stm32-eth BUILD=clang-7
     - env: PROJECT=stm32-eth BUILD=clang-6
     - env: PROJECT=stm32-eth BUILD=clang-5
-    - env: PROJECT=stm32-eth BUILD=clang-4
     - env: PROJECT=stm32-eth BUILD=arm-none-eabi-gcc
     # Danek
     - env: PROJECT=danek BUILD=gcc-8
@@ -40,7 +39,6 @@ matrix:
     - env: PROJECT=keygen BUILD=clang-7
     - env: PROJECT=keygen BUILD=clang-6
     - env: PROJECT=keygen BUILD=clang-5
-    - env: PROJECT=keygen BUILD=clang-4
     # Matcher
     - env: PROJECT=matcher BUILD=gcc-8
     - env: PROJECT=matcher BUILD=gcc-7
@@ -48,7 +46,6 @@ matrix:
     - env: PROJECT=matcher BUILD=clang-7
     - env: PROJECT=matcher BUILD=clang-6
     - env: PROJECT=matcher BUILD=clang-5
-    - env: PROJECT=matcher BUILD=clang-4
 
 
 before_script:
