@@ -30,6 +30,7 @@ matrix:
     # Danek
     - env: PROJECT=danek BUILD=gcc-8
     - env: PROJECT=danek BUILD=gcc-7
+    - env: PROJECT=danek BUILD=clang-8
     - env: PROJECT=danek BUILD=clang-7
     - env: PROJECT=danek BUILD=clang-6
     - env: PROJECT=danek BUILD=clang-5
@@ -45,6 +46,7 @@ matrix:
     - env: PROJECT=matcher BUILD=gcc-8
     - env: PROJECT=matcher BUILD=gcc-7
     - env: PROJECT=matcher BUILD=gcc-6
+    - env: PROJECT=matcher BUILD=clang-8
     - env: PROJECT=matcher BUILD=clang-7
     - env: PROJECT=matcher BUILD=clang-6
     - env: PROJECT=matcher BUILD=clang-5

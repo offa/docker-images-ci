@@ -102,6 +102,13 @@ danek_gcc-7:
     - cd danek
     - ../script/build-image.sh gcc-7 .
 
+danek_clang-8:
+  <<: *danek_job_definition
+  script:
+    - git clone --depth=1 https://github.com/offa/danek danek
+    - cd danek
+    - ../script/build-image.sh clang-8 .
+
 danek_clang-7:
   <<: *danek_job_definition
   script:
@@ -210,6 +217,13 @@ matcher_gcc-6:
     - git clone --depth=1 https://github.com/offa/matcher matcher
     - cd matcher
     - ../script/build-image.sh gcc-6 .
+
+matcher_clang-8:
+  <<: *matcher_job_definition
+  script:
+    - git clone --depth=1 https://github.com/offa/matcher matcher
+    - cd matcher
+    - ../script/build-image.sh clang-8 .
 
 matcher_clang-7:
   <<: *matcher_job_definition
