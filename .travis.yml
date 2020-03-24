@@ -15,7 +15,7 @@ env:
     - DEPLOY_REGISTRY: "registry.gitlab.com/offa/docker-images-ci"
     - IMAGE_NO_PUSH: true
 
-matrix:
+jobs:
   include:
     # Stm32
     - env: PROJECT=stm32-eth BUILD=gcc-9
@@ -65,4 +65,3 @@ before_script:
 script:
     - cd ${PROJECT}
     - ../script/build-image.sh ${BUILD} .
-
