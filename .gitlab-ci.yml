@@ -47,6 +47,13 @@ stm32-eth_gcc-6:
     - cd stm32-eth
     - ../script/build-image.sh gcc-6 .
 
+stm32-eth_clang-10:
+  <<: *stm32-eth_job_definition
+  script:
+    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
+    - cd stm32-eth
+    - ../script/build-image.sh clang-10 .
+
 stm32-eth_clang-9:
   <<: *stm32-eth_job_definition
   script:
@@ -117,6 +124,13 @@ danek_gcc-7:
     - git clone --depth=1 https://github.com/offa/danek danek
     - cd danek
     - ../script/build-image.sh gcc-7 .
+
+danek_clang-10:
+  <<: *danek_job_definition
+  script:
+    - git clone --depth=1 https://github.com/offa/danek danek
+    - cd danek
+    - ../script/build-image.sh clang-10 .
 
 danek_clang-9:
   <<: *danek_job_definition
@@ -189,6 +203,13 @@ keygen_gcc-6:
     - cd keygen
     - ../script/build-image.sh gcc-6 .
 
+keygen_clang-10:
+  <<: *keygen_job_definition
+  script:
+    - git clone --depth=1 https://github.com/offa/keygen keygen
+    - cd keygen
+    - ../script/build-image.sh clang-10 .
+
 keygen_clang-9:
   <<: *keygen_job_definition
   script:
@@ -260,6 +281,13 @@ matcher_gcc-6:
     - cd matcher
     - ../script/build-image.sh gcc-6 .
 
+matcher_clang-10:
+  <<: *matcher_job_definition
+  script:
+    - git clone --depth=1 https://github.com/offa/matcher matcher
+    - cd matcher
+    - ../script/build-image.sh clang-10 .
+
 matcher_clang-9:
   <<: *matcher_job_definition
   script:
@@ -294,4 +322,3 @@ matcher_clang-5:
     - git clone --depth=1 https://github.com/offa/matcher matcher
     - cd matcher
     - ../script/build-image.sh clang-5 .
-
