@@ -19,6 +19,13 @@ before_script:
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-stm32
 
+stm32-eth_gcc-10:
+  <<: *stm32-eth_job_definition
+  script:
+    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
+    - cd stm32-eth
+    - ../script/build-image.sh gcc-10 .
+
 stm32-eth_gcc-9:
   <<: *stm32-eth_job_definition
   script:
@@ -104,6 +111,13 @@ stm32-eth_arm-none-eabi-gcc:
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-danek
 
+danek_gcc-10:
+  <<: *danek_job_definition
+  script:
+    - git clone --depth=1 https://github.com/offa/danek danek
+    - cd danek
+    - ../script/build-image.sh gcc-10 .
+
 danek_gcc-9:
   <<: *danek_job_definition
   script:
@@ -174,6 +188,13 @@ danek_clang-5:
 .keygen_template: &keygen_job_definition
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-keygen
+
+keygen_gcc-10:
+  <<: *keygen_job_definition
+  script:
+    - git clone --depth=1 https://github.com/offa/keygen keygen
+    - cd keygen
+    - ../script/build-image.sh gcc-10 .
 
 keygen_gcc-9:
   <<: *keygen_job_definition
@@ -252,6 +273,13 @@ keygen_clang-5:
 .matcher_template: &matcher_job_definition
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-matcher
+
+matcher_gcc-10:
+  <<: *matcher_job_definition
+  script:
+    - git clone --depth=1 https://github.com/offa/matcher matcher
+    - cd matcher
+    - ../script/build-image.sh gcc-10 .
 
 matcher_gcc-9:
   <<: *matcher_job_definition
