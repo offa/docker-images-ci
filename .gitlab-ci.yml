@@ -15,93 +15,21 @@ before_script:
 # ----------------------------------
 # Stm32-eth Image Build
 # ----------------------------------
-.stm32-eth_template: &stm32-eth_job_definition
+build_stm32-eth_images:
+  parallel:
+    matrix:
+      - COMPILER: gcc
+        VERSION: [10, 9, 8, 7, 6]
+      - COMPILER: clang
+        VERSION: [10, 9, 8, 7, 6, 5]
+      - COMPILER: arm-none-eabi
+        VERSION: [gcc]
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-stm32
-
-stm32-eth_gcc-10:
-  <<: *stm32-eth_job_definition
   script:
     - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
     - cd stm32-eth
-    - ../script/build-image.sh gcc-10 .
-
-stm32-eth_gcc-9:
-  <<: *stm32-eth_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
-    - cd stm32-eth
-    - ../script/build-image.sh gcc-9 .
-
-stm32-eth_gcc-8:
-  <<: *stm32-eth_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
-    - cd stm32-eth
-    - ../script/build-image.sh gcc-8 .
-
-stm32-eth_gcc-7:
-  <<: *stm32-eth_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
-    - cd stm32-eth
-    - ../script/build-image.sh gcc-7 .
-
-stm32-eth_gcc-6:
-  <<: *stm32-eth_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
-    - cd stm32-eth
-    - ../script/build-image.sh gcc-6 .
-
-stm32-eth_clang-10:
-  <<: *stm32-eth_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
-    - cd stm32-eth
-    - ../script/build-image.sh clang-10 .
-
-stm32-eth_clang-9:
-  <<: *stm32-eth_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
-    - cd stm32-eth
-    - ../script/build-image.sh clang-9 .
-
-stm32-eth_clang-8:
-  <<: *stm32-eth_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
-    - cd stm32-eth
-    - ../script/build-image.sh clang-8 .
-
-stm32-eth_clang-7:
-  <<: *stm32-eth_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
-    - cd stm32-eth
-    - ../script/build-image.sh clang-7 .
-
-stm32-eth_clang-6:
-  <<: *stm32-eth_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
-    - cd stm32-eth
-    - ../script/build-image.sh clang-6 .
-
-stm32-eth_clang-5:
-  <<: *stm32-eth_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
-    - cd stm32-eth
-    - ../script/build-image.sh clang-5 .
-
-stm32-eth_arm-none-eabi-gcc:
-  <<: *stm32-eth_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/stm32-eth stm32-eth
-    - cd stm32-eth
-    - ../script/build-image.sh arm-none-eabi-gcc .
+    - ../script/build-image.sh ${COMPILER}-${VERSION} .
 
 
 # ----------------------------------
