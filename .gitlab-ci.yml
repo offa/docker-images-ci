@@ -71,83 +71,16 @@ build_keygen_images:
 # ----------------------------------
 # Matcher Image Build
 # ----------------------------------
-.matcher_template: &matcher_job_definition
+build_matcher_images:
+  parallel:
+    matrix:
+      - COMPILER: gcc
+        VERSION: [10, 9, 8, 7, 6]
+      - COMPILER: clang
+        VERSION: [10, 9, 8, 7, 6, 5]
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-matcher
-
-matcher_gcc-10:
-  <<: *matcher_job_definition
   script:
     - git clone --depth=1 https://github.com/offa/matcher matcher
     - cd matcher
-    - ../script/build-image.sh gcc-10 .
-
-matcher_gcc-9:
-  <<: *matcher_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/matcher matcher
-    - cd matcher
-    - ../script/build-image.sh gcc-9 .
-
-matcher_gcc-8:
-  <<: *matcher_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/matcher matcher
-    - cd matcher
-    - ../script/build-image.sh gcc-8 .
-
-matcher_gcc-7:
-  <<: *matcher_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/matcher matcher
-    - cd matcher
-    - ../script/build-image.sh gcc-7 .
-
-matcher_gcc-6:
-  <<: *matcher_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/matcher matcher
-    - cd matcher
-    - ../script/build-image.sh gcc-6 .
-
-matcher_clang-10:
-  <<: *matcher_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/matcher matcher
-    - cd matcher
-    - ../script/build-image.sh clang-10 .
-
-matcher_clang-9:
-  <<: *matcher_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/matcher matcher
-    - cd matcher
-    - ../script/build-image.sh clang-9 .
-
-matcher_clang-8:
-  <<: *matcher_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/matcher matcher
-    - cd matcher
-    - ../script/build-image.sh clang-8 .
-
-matcher_clang-7:
-  <<: *matcher_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/matcher matcher
-    - cd matcher
-    - ../script/build-image.sh clang-7 .
-
-matcher_clang-6:
-  <<: *matcher_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/matcher matcher
-    - cd matcher
-    - ../script/build-image.sh clang-6 .
-
-matcher_clang-5:
-  <<: *matcher_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/matcher matcher
-    - cd matcher
-    - ../script/build-image.sh clang-5 .
+    - ../script/build-image.sh ${COMPILER}-${VERSION} .
