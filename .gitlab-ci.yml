@@ -35,79 +35,19 @@ build_stm32-eth_images:
 # ----------------------------------
 # Danek Image Build
 # ----------------------------------
-.danek_template: &danek_job_definition
+build_danek_images:
+  parallel:
+    matrix:
+      - COMPILER: gcc
+        VERSION: [10, 9, 8, 7]
+      - COMPILER: clang
+        VERSION: [10, 9, 8, 7, 6, 5]
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-danek
-
-danek_gcc-10:
-  <<: *danek_job_definition
   script:
     - git clone --depth=1 https://github.com/offa/danek danek
     - cd danek
-    - ../script/build-image.sh gcc-10 .
-
-danek_gcc-9:
-  <<: *danek_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/danek danek
-    - cd danek
-    - ../script/build-image.sh gcc-9 .
-
-danek_gcc-8:
-  <<: *danek_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/danek danek
-    - cd danek
-    - ../script/build-image.sh gcc-8 .
-
-danek_gcc-7:
-  <<: *danek_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/danek danek
-    - cd danek
-    - ../script/build-image.sh gcc-7 .
-
-danek_clang-10:
-  <<: *danek_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/danek danek
-    - cd danek
-    - ../script/build-image.sh clang-10 .
-
-danek_clang-9:
-  <<: *danek_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/danek danek
-    - cd danek
-    - ../script/build-image.sh clang-9 .
-
-danek_clang-8:
-  <<: *danek_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/danek danek
-    - cd danek
-    - ../script/build-image.sh clang-8 .
-
-danek_clang-7:
-  <<: *danek_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/danek danek
-    - cd danek
-    - ../script/build-image.sh clang-7 .
-
-danek_clang-6:
-  <<: *danek_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/danek danek
-    - cd danek
-    - ../script/build-image.sh clang-6 .
-
-danek_clang-5:
-  <<: *danek_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/danek danek
-    - cd danek
-    - ../script/build-image.sh clang-5 .
+    - ../script/build-image.sh ${COMPILER}-${VERSION} .
 
 
 # ----------------------------------
