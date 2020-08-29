@@ -40,7 +40,6 @@ jobs:
     - env: PROJECT=keygen BUILD=gcc-9
     - env: PROJECT=keygen BUILD=gcc-8
     - env: PROJECT=keygen BUILD=gcc-7
-    - env: PROJECT=keygen BUILD=gcc-6
     - env: PROJECT=keygen BUILD=clang-10
     - env: PROJECT=keygen BUILD=clang-9
     - env: PROJECT=keygen BUILD=clang-8
