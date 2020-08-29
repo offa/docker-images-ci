@@ -19,7 +19,7 @@ build_stm32-eth_images:
   parallel:
     matrix:
       - COMPILER: gcc
-        VERSION: [10, 9, 8, 7, 6]
+        VERSION: [10, 9, 8, 7]
       - COMPILER: clang
         VERSION: [10, 9, 8, 7, 6, 5]
       - COMPILER: arm-none-eabi

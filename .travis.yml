@@ -17,7 +17,6 @@ jobs:
     - env: PROJECT=stm32-eth BUILD=gcc-9
     - env: PROJECT=stm32-eth BUILD=gcc-8
     - env: PROJECT=stm32-eth BUILD=gcc-7
-    - env: PROJECT=stm32-eth BUILD=gcc-6
     - env: PROJECT=stm32-eth BUILD=clang-10
     - env: PROJECT=stm32-eth BUILD=clang-9
     - env: PROJECT=stm32-eth BUILD=clang-8
