@@ -53,86 +53,19 @@ build_danek_images:
 # ----------------------------------
 # Keygen Image Build
 # ----------------------------------
-.keygen_template: &keygen_job_definition
+build_keygen_images:
+  parallel:
+    matrix:
+      - COMPILER: gcc
+        VERSION: [10, 9, 8, 7, 6]
+      - COMPILER: clang
+        VERSION: [10, 9, 8, 7, 6, 5]
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-keygen
-
-keygen_gcc-10:
-  <<: *keygen_job_definition
   script:
     - git clone --depth=1 https://github.com/offa/keygen keygen
     - cd keygen
-    - ../script/build-image.sh gcc-10 .
-
-keygen_gcc-9:
-  <<: *keygen_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/keygen keygen
-    - cd keygen
-    - ../script/build-image.sh gcc-9 .
-
-keygen_gcc-8:
-  <<: *keygen_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/keygen keygen
-    - cd keygen
-    - ../script/build-image.sh gcc-8 .
-
-keygen_gcc-7:
-  <<: *keygen_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/keygen keygen
-    - cd keygen
-    - ../script/build-image.sh gcc-7 .
-
-keygen_gcc-6:
-  <<: *keygen_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/keygen keygen
-    - cd keygen
-    - ../script/build-image.sh gcc-6 .
-
-keygen_clang-10:
-  <<: *keygen_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/keygen keygen
-    - cd keygen
-    - ../script/build-image.sh clang-10 .
-
-keygen_clang-9:
-  <<: *keygen_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/keygen keygen
-    - cd keygen
-    - ../script/build-image.sh clang-9 .
-
-keygen_clang-8:
-  <<: *keygen_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/keygen keygen
-    - cd keygen
-    - ../script/build-image.sh clang-8 .
-
-keygen_clang-7:
-  <<: *keygen_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/keygen keygen
-    - cd keygen
-    - ../script/build-image.sh clang-7 .
-
-keygen_clang-6:
-  <<: *keygen_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/keygen keygen
-    - cd keygen
-    - ../script/build-image.sh clang-6 .
-
-keygen_clang-5:
-  <<: *keygen_job_definition
-  script:
-    - git clone --depth=1 https://github.com/offa/keygen keygen
-    - cd keygen
-    - ../script/build-image.sh clang-5 .
+    - ../script/build-image.sh ${COMPILER}-${VERSION} .
 
 
 # ----------------------------------
