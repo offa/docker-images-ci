@@ -22,8 +22,8 @@ build_stm32-eth_images:
         VERSION: [10, 9, 8, 7]
       - COMPILER: clang
         VERSION: [10, 9, 8, 7, 6, 5]
-      - COMPILER: arm-none-eabi
-        VERSION: [gcc]
+      - COMPILER: arm-none-eabi-gcc
+        VERSION: [9]
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-stm32
   script:
