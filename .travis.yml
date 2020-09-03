@@ -23,7 +23,7 @@ jobs:
     - env: PROJECT=stm32-eth BUILD=clang-7
     - env: PROJECT=stm32-eth BUILD=clang-6
     - env: PROJECT=stm32-eth BUILD=clang-5
-    - env: PROJECT=stm32-eth BUILD=arm-none-eabi-gcc
+    - env: PROJECT=stm32-eth BUILD=arm-none-eabi-gcc-9
     # Danek
     - env: PROJECT=danek BUILD=gcc-10
     - env: PROJECT=danek BUILD=gcc-9
