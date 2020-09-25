@@ -21,7 +21,7 @@ build_stm32-eth_images:
       - COMPILER: gcc
         VERSION: [10, 9, 8, 7]
       - COMPILER: clang
-        VERSION: [10, 9, 8, 7, 6, 5]
+        VERSION: [10, 9, 8, 7]
       - COMPILER: arm-none-eabi-gcc
         VERSION: [9]
   variables:
@@ -41,7 +41,7 @@ build_danek_images:
       - COMPILER: gcc
         VERSION: [10, 9, 8, 7]
       - COMPILER: clang
-        VERSION: [10, 9, 8, 7, 6, 5]
+        VERSION: [10, 9, 8, 7]
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-danek
   script:
@@ -59,7 +59,7 @@ build_keygen_images:
       - COMPILER: gcc
         VERSION: [10, 9, 8, 7]
       - COMPILER: clang
-        VERSION: [10, 9, 8, 7, 6, 5]
+        VERSION: [10, 9, 8, 7]
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-keygen
   script:
@@ -75,9 +75,9 @@ build_matcher_images:
   parallel:
     matrix:
       - COMPILER: gcc
-        VERSION: [10, 9, 8, 7, 6]
+        VERSION: [10, 9, 8, 7]
       - COMPILER: clang
-        VERSION: [10, 9, 8, 7, 6, 5]
+        VERSION: [10, 9, 8, 7]
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-matcher
   script:

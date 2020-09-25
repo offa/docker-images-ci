@@ -21,8 +21,6 @@ jobs:
     - env: PROJECT=stm32-eth BUILD=clang-9
     - env: PROJECT=stm32-eth BUILD=clang-8
     - env: PROJECT=stm32-eth BUILD=clang-7
-    - env: PROJECT=stm32-eth BUILD=clang-6
-    - env: PROJECT=stm32-eth BUILD=clang-5
     - env: PROJECT=stm32-eth BUILD=arm-none-eabi-gcc-9
     # Danek
     - env: PROJECT=danek BUILD=gcc-10
@@ -33,8 +31,6 @@ jobs:
     - env: PROJECT=danek BUILD=clang-9
     - env: PROJECT=danek BUILD=clang-8
     - env: PROJECT=danek BUILD=clang-7
-    - env: PROJECT=danek BUILD=clang-6
-    - env: PROJECT=danek BUILD=clang-5
     # Keygen
     - env: PROJECT=keygen BUILD=gcc-10
     - env: PROJECT=keygen BUILD=gcc-9
@@ -44,20 +40,15 @@ jobs:
     - env: PROJECT=keygen BUILD=clang-9
     - env: PROJECT=keygen BUILD=clang-8
     - env: PROJECT=keygen BUILD=clang-7
-    - env: PROJECT=keygen BUILD=clang-6
-    - env: PROJECT=keygen BUILD=clang-5
     # Matcher
     - env: PROJECT=matcher BUILD=gcc-10
     - env: PROJECT=matcher BUILD=gcc-9
     - env: PROJECT=matcher BUILD=gcc-8
     - env: PROJECT=matcher BUILD=gcc-7
-    - env: PROJECT=matcher BUILD=gcc-6
     - env: PROJECT=matcher BUILD=clang-10
     - env: PROJECT=matcher BUILD=clang-9
     - env: PROJECT=matcher BUILD=clang-8
     - env: PROJECT=matcher BUILD=clang-7
-    - env: PROJECT=matcher BUILD=clang-6
-    - env: PROJECT=matcher BUILD=clang-5
 
 
 before_script:
