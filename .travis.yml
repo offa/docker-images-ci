@@ -17,6 +17,7 @@ jobs:
     - env: PROJECT=stm32-eth BUILD=gcc-9
     - env: PROJECT=stm32-eth BUILD=gcc-8
     - env: PROJECT=stm32-eth BUILD=gcc-7
+    - env: PROJECT=stm32-eth BUILD=clang-11
     - env: PROJECT=stm32-eth BUILD=clang-10
     - env: PROJECT=stm32-eth BUILD=clang-9
     - env: PROJECT=stm32-eth BUILD=clang-8
@@ -27,6 +28,7 @@ jobs:
     - env: PROJECT=danek BUILD=gcc-9
     - env: PROJECT=danek BUILD=gcc-8
     - env: PROJECT=danek BUILD=gcc-7
+    - env: PROJECT=danek BUILD=clang-11
     - env: PROJECT=danek BUILD=clang-10
     - env: PROJECT=danek BUILD=clang-9
     - env: PROJECT=danek BUILD=clang-8
@@ -36,6 +38,7 @@ jobs:
     - env: PROJECT=keygen BUILD=gcc-9
     - env: PROJECT=keygen BUILD=gcc-8
     - env: PROJECT=keygen BUILD=gcc-7
+    - env: PROJECT=keygen BUILD=clang-11
     - env: PROJECT=keygen BUILD=clang-10
     - env: PROJECT=keygen BUILD=clang-9
     - env: PROJECT=keygen BUILD=clang-8
@@ -45,6 +48,7 @@ jobs:
     - env: PROJECT=matcher BUILD=gcc-9
     - env: PROJECT=matcher BUILD=gcc-8
     - env: PROJECT=matcher BUILD=gcc-7
+    - env: PROJECT=matcher BUILD=clang-11
     - env: PROJECT=matcher BUILD=clang-10
     - env: PROJECT=matcher BUILD=clang-9
     - env: PROJECT=matcher BUILD=clang-8
