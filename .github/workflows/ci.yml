@@ -43,16 +43,6 @@ jobs:
           - { project: "keygen", compiler: "clang", version: 9 }
           - { project: "keygen", compiler: "clang", version: 8 }
           - { project: "keygen", compiler: "clang", version: 7 }
-          ## matcher
-          - { project: "matcher", compiler: "gcc", version: 10 }
-          - { project: "matcher", compiler: "gcc", version: 9 }
-          - { project: "matcher", compiler: "gcc", version: 8 }
-          - { project: "matcher", compiler: "gcc", version: 7 }
-          - { project: "matcher", compiler: "clang", version: 11 }
-          - { project: "matcher", compiler: "clang", version: 10 }
-          - { project: "matcher", compiler: "clang", version: 9 }
-          - { project: "matcher", compiler: "clang", version: 8 }
-          - { project: "matcher", compiler: "clang", version: 7 }
     name: "(${{ matrix.build_config.project }}) ${{ matrix.build_config.compiler }}-${{ matrix.build_config.version }}"
     steps:
       - uses: actions/checkout@master
