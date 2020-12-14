@@ -22,7 +22,7 @@ jobs:
           - { project: "stm32-eth", compiler: "clang", version: 9 }
           - { project: "stm32-eth", compiler: "clang", version: 8 }
           - { project: "stm32-eth", compiler: "clang", version: 7 }
-          - { project: "stm32-eth", compiler: "arm-none-eabi-gcc", version: 9 }
+          - { project: "stm32-eth", compiler: "arm-none-eabi-gcc", version: 10 }
           ## danek
           - { project: "danek", compiler: "gcc", version: 10 }
           - { project: "danek", compiler: "gcc", version: 9 }
