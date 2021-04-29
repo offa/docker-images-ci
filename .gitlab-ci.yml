@@ -19,7 +19,7 @@ build_stm32-eth_images:
   parallel:
     matrix:
       - COMPILER: gcc
-        VERSION: [10, 9, 8, 7]
+        VERSION: [11, 10, 9, 8, 7]
       - COMPILER: clang
         VERSION: [12, 11, 10, 9, 8, 7]
       - COMPILER: arm-none-eabi-gcc
@@ -39,7 +39,7 @@ build_danek_images:
   parallel:
     matrix:
       - COMPILER: gcc
-        VERSION: [10, 9, 8, 7]
+        VERSION: [11, 10, 9, 8, 7]
       - COMPILER: clang
         VERSION: [12, 11, 10, 9, 8, 7]
   variables:
@@ -57,7 +57,7 @@ build_keygen_images:
   parallel:
     matrix:
       - COMPILER: gcc
-        VERSION: [10, 9, 8, 7]
+        VERSION: [11, 10, 9, 8, 7]
       - COMPILER: clang
         VERSION: [12, 11, 10, 9, 8, 7]
   variables:
