@@ -33,24 +33,6 @@ build_stm32-eth_images:
 
 
 # ----------------------------------
-# Danek Image Build
-# ----------------------------------
-build_danek_images:
-  parallel:
-    matrix:
-      - COMPILER: gcc
-        VERSION: [11, 10, 9, 8, 7]
-      - COMPILER: clang
-        VERSION: [12, 11, 10, 9, 8, 7]
-  variables:
-    DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-danek
-  script:
-    - git clone --depth=1 https://github.com/offa/danek danek
-    - cd danek
-    - ../script/build-image.sh ${COMPILER}-${VERSION} .
-
-
-# ----------------------------------
 # Keygen Image Build
 # ----------------------------------
 build_keygen_images:
