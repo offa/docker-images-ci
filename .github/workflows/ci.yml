@@ -39,7 +39,7 @@ jobs:
           - { project: "keygen", compiler: "clang", version: 7 }
     name: "(${{ matrix.build_config.project }}) ${{ matrix.build_config.compiler }}-${{ matrix.build_config.version }}"
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
       - name: Build
         run: |
           git clone --depth=1 https://github.com/offa/${{ matrix.build_config.project }} ${{ matrix.build_config.project }}
