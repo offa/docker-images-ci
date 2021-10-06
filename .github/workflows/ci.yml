@@ -18,6 +18,7 @@ jobs:
           - { project: "stm32-eth", compiler: "gcc", version: 9 }
           - { project: "stm32-eth", compiler: "gcc", version: 8 }
           - { project: "stm32-eth", compiler: "gcc", version: 7 }
+          - { project: "stm32-eth", compiler: "clang", version: 13 }
           - { project: "stm32-eth", compiler: "clang", version: 12 }
           - { project: "stm32-eth", compiler: "clang", version: 11 }
           - { project: "stm32-eth", compiler: "clang", version: 10 }
@@ -31,6 +32,7 @@ jobs:
           - { project: "keygen", compiler: "gcc", version: 9 }
           - { project: "keygen", compiler: "gcc", version: 8 }
           - { project: "keygen", compiler: "gcc", version: 7 }
+          - { project: "keygen", compiler: "clang", version: 13 }
           - { project: "keygen", compiler: "clang", version: 12 }
           - { project: "keygen", compiler: "clang", version: 11 }
           - { project: "keygen", compiler: "clang", version: 10 }
