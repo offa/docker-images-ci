@@ -21,7 +21,7 @@ build_stm32-eth_images:
       - COMPILER: gcc
         VERSION: [11, 10, 9, 8, 7]
       - COMPILER: clang
-        VERSION: [13, 12, 11, 10, 9, 8, 7]
+        VERSION: [14, 13, 12, 11, 10, 9, 8, 7]
       - COMPILER: arm-none-eabi-gcc
         VERSION: [10]
   variables:
@@ -41,7 +41,7 @@ build_keygen_images:
       - COMPILER: gcc
         VERSION: [11, 10, 9, 8, 7]
       - COMPILER: clang
-        VERSION: [13, 12, 11, 10, 9, 8, 7]
+        VERSION: [14, 13, 12, 11, 10, 9, 8, 7]
   variables:
     DEPLOY_REGISTRY: ${CI_REGISTRY_IMAGE}/dist-keygen
   script:
