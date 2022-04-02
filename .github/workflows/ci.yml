@@ -26,19 +26,6 @@ jobs:
           - { project: "stm32-eth", compiler: "clang", version: 8 }
           - { project: "stm32-eth", compiler: "clang", version: 7 }
           - { project: "stm32-eth", compiler: "arm-none-eabi-gcc", version: 10 }
-          ## keygen
-          - { project: "keygen", compiler: "gcc", version: 11 }
-          - { project: "keygen", compiler: "gcc", version: 10 }
-          - { project: "keygen", compiler: "gcc", version: 9 }
-          - { project: "keygen", compiler: "gcc", version: 8 }
-          - { project: "keygen", compiler: "gcc", version: 7 }
-          - { project: "keygen", compiler: "clang", version: 13 }
-          - { project: "keygen", compiler: "clang", version: 12 }
-          - { project: "keygen", compiler: "clang", version: 11 }
-          - { project: "keygen", compiler: "clang", version: 10 }
-          - { project: "keygen", compiler: "clang", version: 9 }
-          - { project: "keygen", compiler: "clang", version: 8 }
-          - { project: "keygen", compiler: "clang", version: 7 }
     name: "(${{ matrix.build_config.project }}) ${{ matrix.build_config.compiler }}-${{ matrix.build_config.version }}"
     steps:
       - uses: actions/checkout@main
