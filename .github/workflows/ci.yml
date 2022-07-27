@@ -12,20 +12,9 @@ jobs:
     strategy:
       matrix:
         build_config:
-          ## stm32-eth
-          - { project: "stm32-eth", compiler: "gcc", version: 12 }
-          - { project: "stm32-eth", compiler: "gcc", version: 11 }
-          - { project: "stm32-eth", compiler: "gcc", version: 10 }
-          - { project: "stm32-eth", compiler: "clang", version: 13 }
-          - { project: "stm32-eth", compiler: "clang", version: 12 }
-          - { project: "stm32-eth", compiler: "clang", version: 11 }
-          - { project: "stm32-eth", compiler: "clang", version: 10 }
-          - { project: "stm32-eth", compiler: "arm-none-eabi-gcc", version: 10 }
+          - { project: "placeholder", compiler: "noop", version: 0 }
     name: "(${{ matrix.build_config.project }}) ${{ matrix.build_config.compiler }}-${{ matrix.build_config.version }}"
     steps:
       - uses: actions/checkout@main
       - name: Build
-        run: |
-          git clone --depth=1 https://github.com/offa/${{ matrix.build_config.project }} ${{ matrix.build_config.project }}
-          cd ${{ matrix.build_config.project }}
-          ../script/build-image.sh ${{ matrix.build_config.compiler }}-${{ matrix.build_config.version }} .
+        run: echo "*** Placeholder ***"
